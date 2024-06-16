@@ -20,7 +20,6 @@ function ContactForm({ onAddContact }) {
     onAddContact(value);
 
     action.resetForm();
-    handleSubmit;
   }
   return (
     <Formik
@@ -33,12 +32,16 @@ function ContactForm({ onAddContact }) {
           <label htmlFor="">
             <span className={css.inputLabel}>Name</span>
             <Field type="text" name="name" className={css.field} />
-            <ErrorMessage name="name" component="span" className={css.error}/>
+            <ErrorMessage name="name" component="span" className={css.error} />
           </label>
           <label htmlFor="">
             <span className={css.inputLabel}>Number</span>
             <Field type="text" name="number" className={css.field} />
-            <ErrorMessage name="number" component="span" className={css.error}/>
+            <ErrorMessage
+              name="number"
+              component="span"
+              className={css.error}
+            />
           </label>
           <button type="submit" className={css.btnSubmit}>
             Add contact
