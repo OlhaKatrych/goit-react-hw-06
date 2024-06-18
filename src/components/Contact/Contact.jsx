@@ -6,7 +6,6 @@ import { deleteContact } from "../../redux/contactsSlice";
 
 function Contact({ data }) {
   const dispatch = useDispatch();
-
   return (
     <div className={css.elemContainer}>
       <div className={css.textNumberContainer}>
@@ -23,7 +22,11 @@ function Contact({ data }) {
           <b>{data.number}</b>
         </p>
       </div>
-      <button type="button" className={css.btnDelete} onClick={() => dispatch(deleteContact(data.id))}>
+      <button
+        type="button"
+        className={css.btnDelete}
+        onClick={() => dispatch(deleteContact(data.id))}
+      >
         Delete
       </button>
     </div>
