@@ -21,10 +21,8 @@ function ContactForm() {
   const dispatch = useDispatch();
 
   function handleSubmit(value, action) {
-    console.log(value);
-
-    dispatch(addContact(value));
-
+    const { name, number } = value;
+    dispatch(addContact(name, number));
     action.resetForm();
   }
   return (

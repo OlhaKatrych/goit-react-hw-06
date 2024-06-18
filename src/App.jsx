@@ -12,18 +12,12 @@ function App() {
     setFilter(evt.target.value);
   }
 
-  function onDeleteContact(contactId) {
-    setContacts((prevState) => {
-      return prevState.filter((contact) => contact.id !== contactId);
-    });
-  }
-
   return (
     <div className={css.rootContainer}>
       <h1 className={css.title}>Phonebook</h1>
       <ContactForm />
       <SearchBar value={filter} onFilter={handleChange} />
-     {/* <ContactList contactValue={filterContacts} onDelete={onDeleteContact} />*/}
+      <ContactList />
     </div>
   );
 }

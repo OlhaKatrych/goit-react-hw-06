@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import contactsArray from "../contactsArray.json";
 import { nanoid } from "nanoid";
+import contactsArray from "../contactsArray.json";
 
 export const contactsSlice = createSlice({
   name: "contacts",
@@ -16,7 +16,9 @@ export const contactsSlice = createSlice({
         return { payload: { id: nanoid(), name, number } };
       },
     },
-    deleteContact(state, action) {},
+    deleteContact(state, action) {
+      state.items.filter((item) => item.id !== action.payload);
+    },
   },
 });
 
